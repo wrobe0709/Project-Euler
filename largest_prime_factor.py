@@ -3,11 +3,12 @@ from math import sqrt
 
 def is_prime(number):
 	primelist = []
-	for x in range(1, number + 1):
+	stop = int(sqrt(number))
+	for x in range(1, stop + 1):
 		if number % x == 0:
 			primelist.append(x)
-	if len(primelist) == 2:
-		if primelist[0] == 1 and primelist[1] == number:
+	if len(primelist) == 1:
+		if primelist[0] == 1:
 			return True
 
 def largest_prime_factor(given):
@@ -17,7 +18,7 @@ def largest_prime_factor(given):
 		if given % x == 0:
 			if is_prime(x) == True:
 				factorlist.append(x)
-	return max(factorlist)
+	print max(factorlist)
 
 if __name__ == '__main__':
 	largest_prime_factor(600851475143)
