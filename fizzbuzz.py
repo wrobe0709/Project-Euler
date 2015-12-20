@@ -1,10 +1,10 @@
 """
-This program plays the game "Fizzbuzz".  It counts to 100, replacing each
-multiple of 5 with the word "fizz", each multiple of 7 with the word "buzz",
-and each multiple of both with the word "fizzbuzz".  It uses the modulo
-operator (%) to determine if a number is divisible by another.
+The fizzbuzz function loops through a range of numbers,
+set by 'limit', and prints fizzbuzz if 'numOne' and 
+'numTwo' are multiples of the current number in the loop.
+If only 'numOne' is a multiple the function prints fizz,
+if only 'numTwo' is a multiple the function prints buzz.
 """
-
 def fizzbuzz(numOne, numTwo, limit):
 	for num in range(1, limit + 1):
 		if (num % numOne == 0) and (num % numTwo == 0):
