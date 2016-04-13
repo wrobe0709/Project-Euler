@@ -1,26 +1,19 @@
+def palin_product(limit):
+    for to_check in range(limit-1, 101100, -1):
+        num = to_check
+        rev = 0
+        while (num > 0):
+            div = num % 10
+            rev = rev * 10 + div
+            num = num / 10
+        if (to_check == rev):
+            for divisor in range(999, 100, -1):
+                if (to_check % divisor == 0):
+                    if (to_check/divisor >= 100 and to_check/divisor <= 999):
+                        return to_check
 
-def largest_palindrome_product():
-	palin_list = []
-	for num in range(100000, 998001):
-		list_check = []
-		for numtxt in str(num):
-			list_check.append(numtxt)
-		if list_check[0] == list_check[5] and list_check[1] == list_check[4] and list_check[2] == list_check[3]:
-			list_check = [''.join(list_check)]
-			list_check = int(list_check[0])
-			palin_list.append(list_check)
-
-	final_list = []
-	for palindrome in palin_list:
-		for factor in range(100, 999):
-			if palindrome%factor == 0:
-				factor_two = (palindrome/factor)
-				if len(str(factor_two)) == 3:
-					final_list.append(palindrome)
-	return max(final_list)
-
-if __name__ == '__main__':
-	largest_palindrome_product()
-		
-	
-
+t = int(raw_input())
+while t > 0:
+    in_num = int(raw_input())
+    print palin_product(in_num)
+    t -= 1
