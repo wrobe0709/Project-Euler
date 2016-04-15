@@ -12,7 +12,6 @@ def sum_square_diff(n):
     return (sum_square * sum_square - squares)
 
 
-#sum_square_diff(10000)
 t = int(raw_input())
 while t > 0:
     in_num = int(raw_input())
